@@ -8,8 +8,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C71008A-3BFC-4875-B4F5-2C55DF299EA4}"
 	ProjectSection(SolutionItems) = preProject
 		CHANGELOG.md = CHANGELOG.md
+		GitAssemblyVersion.targets = GitAssemblyVersion.targets
 		LICENSE = LICENSE
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8F9FC56D-C886-45DC-824B-8101E3AE7126}"
+	ProjectSection(SolutionItems) = preProject
+		.build\MSBuild.Community.Tasks.dll = .build\MSBuild.Community.Tasks.dll
+		.build\MSBuild.Community.Tasks.Targets = .build\MSBuild.Community.Tasks.Targets
+		.build\MSBuild.Community.Tasks.xml = .build\MSBuild.Community.Tasks.xml
+		.build\MSBuild.Community.Tasks.xsd = .build\MSBuild.Community.Tasks.xsd
 	EndProjectSection
 EndProject
 Global
