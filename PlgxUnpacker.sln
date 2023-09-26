@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8F9FC5
 		.build\MSBuild.Community.Tasks.xsd = .build\MSBuild.Community.Tasks.xsd
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlgxUnpacker.Tests", "PlgxUnpacker.Tests\PlgxUnpacker.Tests.csproj", "{37093DC6-A996-473B-8EBB-EB10C4F53036}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3C575110-636B-4837-99CD-B626C6320BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C575110-636B-4837-99CD-B626C6320BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C575110-636B-4837-99CD-B626C6320BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
