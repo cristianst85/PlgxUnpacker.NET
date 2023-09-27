@@ -298,7 +298,7 @@ namespace PlgxUnpacker
                             // A size of zero means there is an empty file.
                             if (decompressedStream.Length > 0 || size == 0)
                             {
-                                using (var outputFileStream = File.Open(directoryPath, FileMode.CreateNew))
+                                using (var outputFileStream = File.Open(outputFilePath, FileMode.CreateNew))
                                 {
                                     decompressedStream.Seek(0, SeekOrigin.Begin);
                                     decompressedStream.CopyTo(outputFileStream);
