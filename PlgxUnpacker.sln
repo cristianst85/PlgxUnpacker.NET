@@ -23,6 +23,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8F9FC5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlgxUnpacker.Tests", "PlgxUnpacker.Tests\PlgxUnpacker.Tests.csproj", "{37093DC6-A996-473B-8EBB-EB10C4F53036}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{8898F8AC-226A-428C-9802-0B5B589932A4}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\build.bat = scripts\build.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{66A53136-1BB1-4C66-83A6-DE364946B745}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\KeePassDummyPlugin.version = Resources\KeePassDummyPlugin.version
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeePassDummyPlugin", "Resources\KeePassDummyPlugin\KeePassDummyPlugin.csproj", "{1B60B9CA-B73D-4379-97F8-8275DF2D0C19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,9 +49,16 @@ Global
 		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37093DC6-A996-473B-8EBB-EB10C4F53036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B60B9CA-B73D-4379-97F8-8275DF2D0C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B60B9CA-B73D-4379-97F8-8275DF2D0C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B60B9CA-B73D-4379-97F8-8275DF2D0C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B60B9CA-B73D-4379-97F8-8275DF2D0C19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B60B9CA-B73D-4379-97F8-8275DF2D0C19} = {66A53136-1BB1-4C66-83A6-DE364946B745}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D3CBE83-29FC-49D9-B97E-002EA05A9322}

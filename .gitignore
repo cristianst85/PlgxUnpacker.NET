@@ -1,7 +1,6 @@
+bin/
+obj/
 /.vs/
-/PlgxUnpacker/bin/
-/PlgxUnpacker/obj/
-/PlgxUnpacker.Tests/bin/
-/PlgxUnpacker.Tests/obj/
 /packages/
+/plgx/
 GeneratedAssemblyInfo.cs

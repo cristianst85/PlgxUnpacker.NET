@@ -62,6 +62,6 @@
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.3.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.3.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>$(SolutionDir)\scripts\build.bat</PostBuildEvent>
+    <PostBuildEvent>$(SolutionDir)\Scripts\build.bat</PostBuildEvent>
   </PropertyGroup>
 </Project>
