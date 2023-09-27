@@ -1,6 +1,6 @@
 # PlgxUnpacker
 
-A lightweight library for unpacking [KeePass](https://keepass.info/) PLGX files.
+A lightweight library for unpacking [KeePass](https://keepass.info/) [PLGX files](https://keepass.info/help/v2_dev/plg_index.html#plgx).
 
 ## Repository
 
