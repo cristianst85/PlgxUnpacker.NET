@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>PlgxUnpacker</id>
+    <version>0.1.0</version>
+    <title>PlgxUnpacker</title>
+    <authors>Cristian Stoica</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <readme>README.md</readme>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/cristianst85/PlgxUnpacker</projectUrl>
+    <description>A lightweight library for unpacking KeePass PLGX files.</description>
+    <copyright>Copyright (c) 2023 Cristian Stoica</copyright>
+    <tags>KeePass plugins PLGX</tags>
+    <dependencies>
+      <group targetFramework="4.5">
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="LICENSE" target="LICENSE" />
+    <file src="README.md" target="" />
+    <file src="PlgxUnpacker\bin\Release\PlgxUnpacker.dll" target="lib\net45\PlgxUnpacker.dll" />
+    <file src="PlgxUnpacker\bin\Release\PlgxUnpacker.xml" target="lib\net45\PlgxUnpacker.xml" />
+  </files>
+</package>
