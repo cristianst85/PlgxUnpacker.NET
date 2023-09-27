@@ -61,20 +61,20 @@ namespace PlgxUnpacker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File list was not found..
+        ///   Looks up a localized string similar to The file is not a valid KeePass PLGX file..
         /// </summary>
-        internal static string FileListWasNotFound {
+        internal static string PlgxFileInvalid {
             get {
-                return ResourceManager.GetString("FileListWasNotFound", resourceCulture);
+                return ResourceManager.GetString("PlgxFileInvalid", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not a KeePass PLGX file..
+        ///   Looks up a localized string similar to The PLGX file list was not found..
         /// </summary>
-        internal static string InvalidKeePassPlgxFile {
+        internal static string PlgxFileListNotfound {
             get {
-                return ResourceManager.GetString("InvalidKeePassPlgxFile", resourceCulture);
+                return ResourceManager.GetString("PlgxFileListNotfound", resourceCulture);
             }
         }
     }

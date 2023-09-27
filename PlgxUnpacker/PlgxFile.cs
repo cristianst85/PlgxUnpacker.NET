@@ -7,8 +7,14 @@ using System.Text;
 
 namespace PlgxUnpacker
 {
+    /// <summary>
+    /// This class represents a PLGX file instance.
+    /// </summary>
     public class PlgxFile : IPlgxFile
     {
+        /// <summary>
+        /// Returns a string representing the extension (.plgx) of a PLGX file.
+        /// </summary>
         public static string Extension
         {
             get
@@ -17,8 +23,14 @@ namespace PlgxUnpacker
             }
         }
 
+        /// <summary>
+        /// Gets the absolute file path of the PLGX file.
+        /// </summary>
         public string Path { get; private set; }
 
+        /// <summary>
+        /// Gets the information metadata of the PLGX file.
+        /// </summary>
         public PlgxFileInfo Info { get; private set; }
 
         private PlgxFile(string filePath, PlgxFileInfo plgxFileInfo)
@@ -27,6 +39,14 @@ namespace PlgxUnpacker
             this.Info = plgxFileInfo;
         }
 
+        /// <summary>
+        /// Loads a PLGX file from the given file path.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns>A PlgxFile instance.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="FileNotFoundException"></exception>
+        /// <exception cref="Exception"></exception>
         public static PlgxFile LoadFromFile(string filePath)
         {
             if (filePath == null)
@@ -36,14 +56,14 @@ namespace PlgxUnpacker
 
             if (!File.Exists(filePath))
             {
-                throw new FileNotFoundException();
+                throw new FileNotFoundException("The file was not found.");
             }
 
             filePath = System.IO.Path.GetFullPath(filePath);
 
             if (!IsPlgxFile(filePath))
             {
-                throw new Exception(Properties.Resource.InvalidKeePassPlgxFile);
+                throw new Exception(Properties.Resource.PlgxFileInvalid);
             }
 
             var plgxFileInfo = GetPlgxFileInfo(filePath);
@@ -51,6 +71,11 @@ namespace PlgxUnpacker
             return new PlgxFile(filePath, plgxFileInfo);
         }
 
+        /// <summary>
+        /// Gets a collection of unpacked file entries contained within the PLGX file.
+        /// </summary>
+        /// <returns>A collection of <see cref="PlgxFileEntry"/>.</returns>
+        /// <exception cref="Exception"></exception>
         public IEnumerable<PlgxFileEntry> GetUnpackedFiles()
         {
             var filesStartPattern = BitConverter.GetBytes(PlgxFileConstants.FilesStartPattern);
@@ -65,7 +90,7 @@ namespace PlgxUnpacker
 
                     if (filesStartPosition == -1)
                     {
-                        throw new Exception(Properties.Resource.FileListWasNotFound);
+                        throw new Exception(Properties.Resource.PlgxFileListNotfound);
                     }
 
                     fileStream.Position = fileStream.Position - bytesCount + filesStartPosition + 14;
@@ -116,6 +141,12 @@ namespace PlgxUnpacker
             }
         }
 
+        /// <summary>
+        /// Determines whether the given file path is a PLGX file.
+        /// </summary>
+        /// <param name="filePath">The file path of the file to test.</param>
+        /// <returns>Returns <c>true</c> if the <paramref name="filePath" /> is a PLGX file;
+        /// <c>false</c> otherwise.</returns>
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "Dispose is idempotent")]
         public static bool IsPlgxFile(string filePath)
         {
@@ -133,6 +164,14 @@ namespace PlgxUnpacker
             }
         }
 
+        /// <summary>
+        /// Returns the PLGX file information metadata for the given file path.
+        /// </summary>
+        /// <param name="filePath">The file path of the file to return the information metadata.</param>
+        /// <returns>A <see cref="PlgxFileInfo"/> instance.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="FileNotFoundException"></exception>
+        /// <exception cref="Exception"></exception>
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "Dispose is idempotent")]
         public static PlgxFileInfo GetPlgxFileInfo(string filePath)
         {
@@ -143,14 +182,14 @@ namespace PlgxUnpacker
 
             if (!File.Exists(filePath))
             {
-                throw new FileNotFoundException();
+                throw new FileNotFoundException("The file was not found.");
             }
 
             filePath = System.IO.Path.GetFullPath(filePath);
 
             if (!IsPlgxFile(filePath))
             {
-                throw new Exception(Properties.Resource.InvalidKeePassPlgxFile);
+                throw new Exception(Properties.Resource.PlgxFileInvalid);
             }
 
             using (var fileStream = GetFileStream(filePath))
@@ -183,7 +222,7 @@ namespace PlgxUnpacker
 
                     if (filesStartPosition == -1)
                     {
-                        throw new Exception(Properties.Resource.FileListWasNotFound);
+                        throw new Exception(Properties.Resource.PlgxFileListNotfound);
                     }
 
                     fileStream.Position = fileStream.Position - bytesCount + filesStartPosition + 14;
@@ -222,29 +261,36 @@ namespace PlgxUnpacker
             }
         }
 
+        /// <summary>
+        /// Unpacks the PLGX file content to the given directory path.
+        /// <para>The directory path must exist and be an empty directory.</para>
+        /// </summary>
+        /// <param name="directoryPath">The directory path to unpack the PLGX file content to.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="Exception"></exception>
         [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "Dispose is idempotent")]
-        public void UnpackTo(string outputDirectoryPath)
+        public void UnpackTo(string directoryPath)
         {
-            if (outputDirectoryPath == null)
+            if (directoryPath == null)
             {
-                throw new ArgumentNullException(nameof(outputDirectoryPath));
+                throw new ArgumentNullException(nameof(directoryPath));
             }
 
-            if (!Directory.Exists(outputDirectoryPath))
+            if (!Directory.Exists(directoryPath))
             {
-                throw new Exception("Output directory does not exist.");
+                throw new DirectoryNotFoundException("The directory was not found.");
             }
 
-            if (Directory.Exists(outputDirectoryPath) && Directory.GetFiles(outputDirectoryPath).Length > 0 || Directory.GetDirectories(outputDirectoryPath).Length > 0)
+            if (Directory.Exists(directoryPath) && Directory.GetFiles(directoryPath).Length > 0 || Directory.GetDirectories(directoryPath).Length > 0)
             {
-                throw new Exception("Output directory must be empty.");
+                throw new Exception("The directory must be empty.");
             }
 
-            outputDirectoryPath = System.IO.Path.GetFullPath(outputDirectoryPath);
+            directoryPath = System.IO.Path.GetFullPath(directoryPath);
 
             if (!IsPlgxFile(Path))
             {
-                throw new Exception(Properties.Resource.InvalidKeePassPlgxFile);
+                throw new Exception(Properties.Resource.PlgxFileInvalid);
             }
 
             var filesStartPattern = BitConverter.GetBytes(PlgxFileConstants.FilesStartPattern);
@@ -259,7 +305,7 @@ namespace PlgxUnpacker
 
                     if (filesStartPosition == -1)
                     {
-                        throw new Exception(Properties.Resource.FileListWasNotFound);
+                        throw new Exception(Properties.Resource.PlgxFileListNotfound);
                     }
 
                     fileStream.Position = fileStream.Position - bytesCount + filesStartPosition + 14;
@@ -287,12 +333,12 @@ namespace PlgxUnpacker
                             // Remove relative path.
                             fileName = fileName.Replace("../", string.Empty).Replace(@"..\", string.Empty);
 
-                            var outputFilePath = System.IO.Path.Combine(outputDirectoryPath, fileName);
-                            var directoryPath = System.IO.Path.GetDirectoryName(outputFilePath);
+                            var outputFilePath = System.IO.Path.Combine(directoryPath, fileName);
+                            var outputDirectoryPath = System.IO.Path.GetDirectoryName(outputFilePath);
 
-                            if (!Directory.Exists(directoryPath))
+                            if (!Directory.Exists(outputDirectoryPath))
                             {
-                                Directory.CreateDirectory(directoryPath);
+                                Directory.CreateDirectory(outputDirectoryPath);
                             }
 
                             // A size of zero means there is an empty file.

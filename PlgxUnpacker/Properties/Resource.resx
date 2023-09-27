@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FileListWasNotFound" xml:space="preserve">
-    <value>File list was not found.</value>
+  <data name="PlgxFileInvalid" xml:space="preserve">
+    <value>The file is not a valid KeePass PLGX file.</value>
   </data>
-  <data name="InvalidKeePassPlgxFile" xml:space="preserve">
-    <value>Not a KeePass PLGX file.</value>
+  <data name="PlgxFileListNotfound" xml:space="preserve">
+    <value>The PLGX file list was not found.</value>
   </data>
 </root>
