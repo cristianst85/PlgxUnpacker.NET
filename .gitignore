@@ -3,4 +3,5 @@ obj/
 /.vs/
 /packages/
 /plgx/
+/PlgxUnpacker.Tests.Workspace/
 GeneratedAssemblyInfo.cs

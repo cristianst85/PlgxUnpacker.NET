@@ -41,17 +41,26 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Helpers\FileUtils.cs" />
+    <Compile Include="PlgxFileTestsBaseClass.cs" />
     <Compile Include="PlgxFileTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Compile Include="PlgxFileUnpackToTests.cs" />
+    <None Include="Resources\RandomBinaryFile.bin" />
+    <None Include="Resources\RandomBinaryFile1K.bin" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlgxUnpacker\PlgxUnpacker.csproj">
       <Project>{3c575110-636b-4837-99cd-b626c6320bab}</Project>
       <Name>PlgxUnpacker</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\EmptyTextFile.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
