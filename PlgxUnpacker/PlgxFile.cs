@@ -93,7 +93,7 @@ namespace PlgxUnpacker
                             // Remove relative path.
                             fileName = fileName.Replace("../", string.Empty).Replace(@"..\", string.Empty);
 
-                            // What if there is an empty file?
+                            // A size of zero means there is an empty file.
                             if (decompressedStream.Length > 0 || size == 0)
                             {
                                 using (var memoryStream = new MemoryStream())
@@ -121,6 +121,11 @@ namespace PlgxUnpacker
         {
             using (var fileStream = GetFileStream(filePath))
             {
+                if (fileStream.Length < sizeof(int))
+                {
+                    return false;
+                }
+
                 using (var binaryReader = new BinaryReader(fileStream))
                 {
                     return binaryReader.ReadInt32() == PlgxFileConstants.Magic;
@@ -290,7 +295,8 @@ namespace PlgxUnpacker
                                 Directory.CreateDirectory(directoryPath);
                             }
 
-                            if (decompressedStream.Length > 0 || size == 0) // What if there is an empty file?
+                            // A size of zero means there is an empty file.
+                            if (decompressedStream.Length > 0 || size == 0)
                             {
                                 using (var outputFileStream = File.Open(directoryPath, FileMode.CreateNew))
                                 {
