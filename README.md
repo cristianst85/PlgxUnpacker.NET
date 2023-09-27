@@ -2,6 +2,9 @@
 
 A lightweight library for unpacking [KeePass](https://keepass.info/) [PLGX files](https://keepass.info/help/v2_dev/plg_index.html#plgx).
 
+[![NuGet Version (PlgxUnpacker)](https://img.shields.io/nuget/v/PlgxUnpacker.svg)](https://www.nuget.org/packages/PlgxUnpacker/)
+[![MIT License](https://img.shields.io/github/license/cristianst85/PlgxUnpacker.svg)](https://github.com/cristianst85/PlgxUnpacker/blob/master/LICENSE)
+
 ## Usage
 
 ```C#
