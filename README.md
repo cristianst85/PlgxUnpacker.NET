@@ -2,6 +2,16 @@
 
 A lightweight library for unpacking [KeePass](https://keepass.info/) [PLGX files](https://keepass.info/help/v2_dev/plg_index.html#plgx).
 
+## Usage
+
+```C#
+if (PlgxFile.IsPlgxFile(filePath))
+{
+	var plgxFile = PlgxFile.LoadFrom(filePath);
+	plgxFile.UnpackTo(directoryPath);
+}
+```
+
 ## Repository
 
 The main repository is hosted on [GitHub](https://github.com/cristianst85/PlgxUnpacker).
