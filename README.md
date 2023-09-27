@@ -7,7 +7,7 @@ A lightweight library for unpacking [KeePass](https://keepass.info/) [PLGX files
 ```C#
 if (PlgxFile.IsPlgxFile(filePath))
 {
-	var plgxFile = PlgxFile.LoadFrom(filePath);
+	var plgxFile = PlgxFile.LoadFromFile(filePath);
 	plgxFile.UnpackTo(directoryPath);
 }
 ```
