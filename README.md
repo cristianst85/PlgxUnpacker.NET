@@ -30,3 +30,7 @@ PlgxUnpacker is released under the MIT License. See the [bundled LICENSE](https:
 ## Credits
 
 The idea for this library was inspired by [PlgxExtractor](https://github.com/Geograph-us/PlgxExtractor).
+
+## Related Projects
+
+* [PlgxUnpacker.Tools](https://github.com/cristianst85/PlgxUnpacker.Tools)
