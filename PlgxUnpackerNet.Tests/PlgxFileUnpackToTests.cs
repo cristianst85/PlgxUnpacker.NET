@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace PlgxUnpacker.Tests
+namespace PlgxUnpackerNet.Tests
 {
     [TestFixture]
 	public class PlgxFileUnpackToTests : PlgxFileTestsBaseClass

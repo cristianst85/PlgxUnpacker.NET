@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PlgxUnpacker.KeePassDummyPlugin")]
+[assembly: AssemblyTitle("PlgxUnpackerNet.KeePassDummyPlugin")]
 [assembly: AssemblyDescription("A KeePass dummy plugin.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cristian Stoica")]

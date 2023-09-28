@@ -3,6 +3,6 @@ obj/
 /.vs/
 /packages/
 /plgx/
-/PlgxUnpacker.Tests.Workspace/
+/PlgxUnpackerNet.Tests.Workspace/
 GeneratedAssemblyInfo.cs
 /PlgxUnpacker*.nupkg

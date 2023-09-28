@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PlgxUnpacker
+namespace PlgxUnpackerNet
 {
     /// <summary>
     /// Provides an interface for <see cref="PlgxFile"/>.

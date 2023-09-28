@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PlgxUnpacker.Tests.Extensions
+namespace PlgxUnpackerNet.Tests.Extensions
 {
     internal static class DateTimeExtensions
     {

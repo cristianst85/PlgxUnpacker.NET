@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PlgxUnpacker
+namespace PlgxUnpackerNet
 {
     /// <summary>
     /// This class represents a file entry in a PLGX file.

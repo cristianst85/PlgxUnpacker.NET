@@ -9,8 +9,8 @@
     <ProjectGuid>{37093DC6-A996-473B-8EBB-EB10C4F53036}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlgxUnpacker.Tests</RootNamespace>
-    <AssemblyName>PlgxUnpacker.Tests</AssemblyName>
+    <RootNamespace>PlgxUnpackerNet.Tests</RootNamespace>
+    <AssemblyName>PlgxUnpackerNet.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -54,9 +54,9 @@
     <None Include="Resources\RandomBinaryFile1K.bin" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlgxUnpacker\PlgxUnpacker.csproj">
+    <ProjectReference Include="..\PlgxUnpackerNet\PlgxUnpackerNet.csproj">
       <Project>{3c575110-636b-4837-99cd-b626c6320bab}</Project>
-      <Name>PlgxUnpacker</Name>
+      <Name>PlgxUnpackerNet</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

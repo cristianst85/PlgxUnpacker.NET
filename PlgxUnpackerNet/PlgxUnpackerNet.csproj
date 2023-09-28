@@ -7,8 +7,8 @@
     <ProjectGuid>{3C575110-636B-4837-99CD-B626C6320BAB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlgxUnpacker</RootNamespace>
-    <AssemblyName>PlgxUnpacker</AssemblyName>
+    <RootNamespace>PlgxUnpackerNet</RootNamespace>
+    <AssemblyName>PlgxUnpackerNet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\PlgxUnpacker.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\PlgxUnpackerNet.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\PlgxUnpacker.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\PlgxUnpackerNet.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

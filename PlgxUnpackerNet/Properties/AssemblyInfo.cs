@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PlgxUnpacker.Net")]
+[assembly: AssemblyTitle("PlgxUnpackerNet")]
 [assembly: AssemblyDescription("A lightweight library for unpacking KeePass PLGX files.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cristian Stoica")]
-[assembly: AssemblyProduct("PlgxUnpacker.Net")]
+[assembly: AssemblyProduct("PlgxUnpackerNet")]
 [assembly: AssemblyCopyright("Copyright © 2023 Cristian Stoica")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
-namespace PlgxUnpacker.Tests.Helpers
+namespace PlgxUnpackerNet.Tests.Helpers
 {
     internal class FileUtils
     {

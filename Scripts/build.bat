@@ -26,7 +26,7 @@ echo Building KeePass PLGX file...
 %KEEPASS_PATH% --plgx-prereq-kp:2.54 --plgx-prereq-net:4.5 --plgx-create %SOURCE_PATH%
 
 echo Moving PLGX file to the plgx directory...
-move /Y .\Resources\KeePassDummyPlugin.plgx .\plgx\PlgxUnpacker.KeePassDummyPlugin.plgx
+move /Y .\Resources\KeePassDummyPlugin.plgx .\plgx\PlgxUnpackerNet.KeePassDummyPlugin.plgx
 
 echo Done.
 rem pause

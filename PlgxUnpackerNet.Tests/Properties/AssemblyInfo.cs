@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PlgxUnpacker.Tests")]
-[assembly: AssemblyDescription("PlgxUnpacker unit test library.")]
+[assembly: AssemblyTitle("PlgxUnpackerNet.Tests")]
+[assembly: AssemblyDescription("PlgxUnpackerNet unit test library.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cristian Stoica")]
-[assembly: AssemblyProduct("PlgxUnpacker.Tests")]
+[assembly: AssemblyProduct("PlgxUnpackerNet.Tests")]
 [assembly: AssemblyCopyright("Copyright © 2023 Cristian Stoica")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

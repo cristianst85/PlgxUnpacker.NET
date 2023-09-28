@@ -7,7 +7,7 @@ namespace KeePassDummyPlugin
 {
     public sealed class KeePassDummyPluginExt : Plugin
     {
-        public const string Title = "PlgxUnpacker.KeePassDummyPlugin";
+        public const string Title = "PlgxUnpackerNet.KeePassDummyPlugin";
 
         private const string PluginName = "KeePassDummyPluginExt";
         private const string PluginUpdateUrl = "https://raw.githubusercontent.com/cristianst85/PlgxUnpacker/master/Resources/KeePassDummyPlugin.version";

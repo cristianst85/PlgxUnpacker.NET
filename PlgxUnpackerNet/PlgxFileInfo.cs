@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace PlgxUnpacker
+namespace PlgxUnpackerNet
 {
     /// <summary>
     /// This class represents the PLGX file information metadata.

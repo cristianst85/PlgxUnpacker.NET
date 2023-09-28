@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using PlgxUnpacker.Tests.Extensions;
+using PlgxUnpackerNet.Tests.Extensions;
 using System.IO;
 using System.Linq;
 
-namespace PlgxUnpacker.Tests
+namespace PlgxUnpackerNet.Tests
 {
     [TestFixture]
     public class PlgxFileTests : PlgxFileTestsBaseClass

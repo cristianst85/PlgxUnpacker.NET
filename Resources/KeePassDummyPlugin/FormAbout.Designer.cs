@@ -75,7 +75,7 @@
             this.labelPluginName.Name = "labelPluginName";
             this.labelPluginName.Size = new System.Drawing.Size(259, 15);
             this.labelPluginName.TabIndex = 1;
-            this.labelPluginName.Text = "PlgxUnpacker.KeePassDummyPlugin";
+            this.labelPluginName.Text = "PlgxUnpackerNet.KeePassDummyPlugin";
             this.labelPluginName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelContact

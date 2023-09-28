@@ -5,7 +5,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 
-namespace PlgxUnpacker
+namespace PlgxUnpackerNet
 {
     /// <summary>
     /// This class represents a PLGX file instance.

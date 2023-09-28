@@ -21,7 +21,7 @@
   <files>
     <file src="LICENSE" target="LICENSE" />
     <file src="README.md" target="" />
-    <file src="PlgxUnpacker\bin\Release\PlgxUnpacker.dll" target="lib\net45\PlgxUnpacker.dll" />
-    <file src="PlgxUnpacker\bin\Release\PlgxUnpacker.xml" target="lib\net45\PlgxUnpacker.xml" />
+    <file src="PlgxUnpackerNet\bin\Release\PlgxUnpackerNet.dll" target="lib\net45\PlgxUnpackerNet.dll" />
+    <file src="PlgxUnpackerNet\bin\Release\PlgxUnpackerNet.xml" target="lib\net45\PlgxUnpackerNet.xml" />
   </files>
 </package>

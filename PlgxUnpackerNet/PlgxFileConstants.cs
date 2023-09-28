@@ -1,4 +1,4 @@
-﻿namespace PlgxUnpacker
+﻿namespace PlgxUnpackerNet
 {
     internal static class PlgxFileConstants
     {
