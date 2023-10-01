@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## 0.3.0 (2023-10.01)
+
+- Added `PreBuildCommand` and `PostBuildCommand` properties to `PlgxFileInfo`.
+
 ## 0.2.0 (2023-09-28)
 
 - Updated assembly name and namespaces from PlgxUnpacker to PlgxUnpackerNet.
