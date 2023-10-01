@@ -58,6 +58,10 @@
   <ItemGroup>
     <Content Include="Resources\EmptyTextFile.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scripts\PostBuildScript.bat" />
+    <None Include="Resources\Scripts\PreBuildScript.bat" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

@@ -25,6 +25,20 @@ namespace PlgxUnpackerNet
         public string PluginCreationToolName { get; private set; }
 
         /// <summary>
+        /// Gets the pre-build command.
+        /// <para>This is an optional command that is embedded in the PLGX file
+        /// and executed when compiling the plugin on the end-user's system.</para>
+        /// </summary>
+        public string PreBuildCommand { get; internal set; }
+
+        /// <summary>
+        /// Gets the post-build command.
+        /// <para>This is an optional command that is embedded in the PLGX file
+        /// and executed when compiling the plugin on the end-user's system.</para>
+        /// </summary>
+        public string PostBuildCommand { get; internal set; }
+
+        /// <summary>
         /// Gets a list of file names contained within the PLGX file.
         /// <para>Each name represents a relative path to the directory structure of the original plugin folder.</para>
         /// </summary>

@@ -10,8 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CHANGELOG.md = CHANGELOG.md
 		GitAssemblyVersion.targets = GitAssemblyVersion.targets
 		LICENSE = LICENSE
-		README.md = README.md
 		PlgxUnpacker.nuspec = PlgxUnpacker.nuspec
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8F9FC56D-C886-45DC-824B-8101E3AE7126}"
@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlgxUnpackerNet.Tests", "Pl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{8898F8AC-226A-428C-9802-0B5B589932A4}"
 	ProjectSection(SolutionItems) = preProject
-		scripts\build.bat = scripts\build.bat
+		Scripts\createDummyPlugins.bat = Scripts\createDummyPlugins.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{66A53136-1BB1-4C66-83A6-DE364946B745}"

@@ -214,6 +214,28 @@ namespace PlgxUnpackerNet
                     value = binaryReader.ReadBytes(size);
                     var creationToolName = Encoding.UTF8.GetString(value);
 
+                    string preBuildCommand = null;
+                    string postBuildCommand = null;
+
+                    while (true)
+                    {
+                        var plgxFileObject = GetNextObject(binaryReader);
+
+                        if (plgxFileObject.Type == PlgxFileConstants.BeginContent)
+                        {
+                            fileStream.Position -= 6;
+                            break;
+                        }
+                        else if (plgxFileObject.Type == PlgxFileConstants.PreBuildCommand)
+                        {
+                            preBuildCommand = Encoding.UTF8.GetString(plgxFileObject.Data);
+                        }
+                        else if (plgxFileObject.Type == PlgxFileConstants.PostBuildCommand)
+                        {
+                            postBuildCommand = Encoding.UTF8.GetString(plgxFileObject.Data);
+                        }
+                    }
+
                     var filesStartPattern = BitConverter.GetBytes(PlgxFileConstants.FilesStartPattern);
 
                     // Advance to the file list.
@@ -256,7 +278,13 @@ namespace PlgxUnpackerNet
                         }
                     }
 
-                    return new PlgxFileInfo(pluginName, creationDate, creationToolName, fileNames);
+                    var plgxFileInfo = new PlgxFileInfo(pluginName, creationDate, creationToolName, fileNames)
+                    {
+                        PreBuildCommand = preBuildCommand,
+                        PostBuildCommand = postBuildCommand
+                    };
+
+                    return plgxFileInfo;
                 }
             }
         }
@@ -392,6 +420,15 @@ namespace PlgxUnpackerNet
             }
 
             return -1;
+        }
+
+        private static PlgxFileObject GetNextObject(BinaryReader binaryReader)
+        {
+            var type = binaryReader.ReadUInt16();
+            var size = binaryReader.ReadInt32();
+            var data = binaryReader.ReadBytes(size);
+
+            return new PlgxFileObject(type, data);
         }
 
         private static FileStream GetFileStream(string filePath)
