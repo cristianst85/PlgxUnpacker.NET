@@ -1,6 +1,6 @@
 ﻿# Changelog
 
-## 0.3.0 (2023-10.01)
+## 0.3.0 (2023-10-01)
 
 - Added `PreBuildCommand` and `PostBuildCommand` properties to `PlgxFileInfo`.
 
