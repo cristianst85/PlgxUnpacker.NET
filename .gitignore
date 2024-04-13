@@ -1,8 +1,7 @@
 bin/
 obj/
-/.vs/
-/packages/
+.vs/
 /plgx/
 /PlgxUnpackerNet.Tests.Workspace/
-GeneratedAssemblyInfo.cs
 /PlgxUnpacker*.nupkg
+GeneratedAssemblyInfo.cs
