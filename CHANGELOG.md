@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+## 0.4.0 (2024-04-13)
+
+ - Updated project and package from PlgxUnpacker to PlgxUnpacker.NET.
+
 ## 0.3.0 (2023-10-01)
 
 - Added `PreBuildCommand` and `PostBuildCommand` properties to `PlgxFileInfo`.
