@@ -10,7 +10,7 @@ namespace PlgxUnpackerNet.Tests
         [TestCase]
         public void PlgxFile_IsPlgxFile_Returns_True()
         {
-            Assert.IsTrue(PlgxFile.IsPlgxFile(PlgxFilePath));
+            Assert.That(PlgxFile.IsPlgxFile(PlgxFilePath), Is.True);
         }
 
         [TestCase("EmptyTextFile.txt")]
@@ -21,7 +21,7 @@ namespace PlgxUnpackerNet.Tests
             var filePath = Path.Combine(TestResourcesDirectoryPath, fileName);
             filePath = Path.GetFullPath(filePath);
 
-            Assert.IsFalse(PlgxFile.IsPlgxFile(filePath));
+            Assert.That(PlgxFile.IsPlgxFile(filePath), Is.False);
         }
 
         [TestCase]
@@ -37,22 +37,22 @@ namespace PlgxUnpackerNet.Tests
             PlgxFile plgxFile = null;
 
             Assert.DoesNotThrow(() => plgxFile = PlgxFile.LoadFromFile(PlgxFilePath));
-            Assert.IsNotNull(plgxFile);
-            Assert.AreEqual(Path.GetFullPath(PlgxFilePath), plgxFile.Path);
+            Assert.That(plgxFile, Is.Not.Null);
+            Assert.That(Path.GetFullPath(PlgxFilePath), Is.EqualTo(plgxFile.Path));
 
             VerifyPlgxFileInfo(plgxFile.Info);
 
             var unpackedFiles = plgxFile.GetUnpackedFiles();
 
-            CollectionAssert.AreEqual(FileNamesList, unpackedFiles.Select(x => x.Name));
+            Assert.That(FileNamesList, Is.EqualTo(unpackedFiles.Select(x => x.Name)));
 
             foreach (var fileEntry in unpackedFiles)
             {
                 var fileEntryPath = Path.Combine(PlgxProjectDirectoryPath, fileEntry.Name);
                 fileEntryPath = Path.GetFullPath(fileEntryPath);
 
-                Assert.IsTrue(File.Exists(fileEntryPath));
-                Assert.AreEqual(File.ReadAllBytes(fileEntryPath), fileEntry.Content);
+                Assert.That(File.Exists(fileEntryPath), Is.True);
+                Assert.That(File.ReadAllBytes(fileEntryPath), Is.EqualTo(fileEntry.Content));
             }
         }
 
@@ -64,7 +64,7 @@ namespace PlgxUnpackerNet.Tests
             Assert.That(plgxFileInfo.PreBuildCommand, Is.Null);
             Assert.That(plgxFileInfo.PostBuildCommand, Is.Null);
 
-            CollectionAssert.AreEqual(FileNamesList, plgxFileInfo.FileNames);
+            Assert.That(FileNamesList, Is.EqualTo(plgxFileInfo.FileNames));
         }
 
         [TestCase]
@@ -80,22 +80,22 @@ namespace PlgxUnpackerNet.Tests
             PlgxFile plgxFile = null;
 
             Assert.DoesNotThrow(() => plgxFile = PlgxFile.LoadFromFile(PlgxFileWithCommandsPath));
-            Assert.IsNotNull(plgxFile);
-            Assert.AreEqual(Path.GetFullPath(PlgxFileWithCommandsPath), plgxFile.Path);
+            Assert.That(plgxFile, Is.Not.Null);
+            Assert.That(Path.GetFullPath(PlgxFileWithCommandsPath), Is.EqualTo(plgxFile.Path));
 
             VerifyPlgxFileInfo_WithCommands(plgxFile.Info);
 
             var unpackedFiles = plgxFile.GetUnpackedFiles();
 
-            CollectionAssert.AreEqual(FileNamesList, unpackedFiles.Select(x => x.Name));
+            Assert.That(FileNamesList, Is.EqualTo(unpackedFiles.Select(x => x.Name)));
 
             foreach (var fileEntry in unpackedFiles)
             {
                 var fileEntryPath = Path.Combine(PlgxProjectDirectoryPath, fileEntry.Name);
                 fileEntryPath = Path.GetFullPath(fileEntryPath);
 
-                Assert.IsTrue(File.Exists(fileEntryPath));
-                Assert.AreEqual(File.ReadAllBytes(fileEntryPath), fileEntry.Content);
+                Assert.That(File.Exists(fileEntryPath), Is.True);
+                Assert.That(File.ReadAllBytes(fileEntryPath), Is.EqualTo(fileEntry.Content));
             }
         }
 
@@ -107,7 +107,7 @@ namespace PlgxUnpackerNet.Tests
             Assert.That(plgxFileInfo.PreBuildCommand, Is.EqualTo(@"""{PLGX_TEMP_DIR}Resources\Scripts\PreBuildScript.bat"""));
             Assert.That(plgxFileInfo.PostBuildCommand, Is.EqualTo(@"""{PLGX_TEMP_DIR}Resources\Scripts\PostBuildScript.bat"""));
 
-            CollectionAssert.AreEqual(FileNamesList, plgxFileInfo.FileNames);
+            Assert.That(FileNamesList, Is.EqualTo(plgxFileInfo.FileNames));
         }
     }
 }

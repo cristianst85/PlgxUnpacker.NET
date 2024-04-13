@@ -17,7 +17,7 @@ namespace PlgxUnpackerNet.Tests
 				Directory.CreateDirectory(directoryPath);
 			}
 
-			Assert.IsEmpty(Directory.GetFiles(directoryPath));
+			Assert.That(Directory.GetFiles(directoryPath), Is.Empty);
 		}
 
 		[TestCase]
@@ -28,21 +28,21 @@ namespace PlgxUnpackerNet.Tests
 			PlgxFile plgxFile = null;
 
 			Assert.DoesNotThrow(() => plgxFile = PlgxFile.LoadFromFile(PlgxFilePath));
-			Assert.IsNotNull(plgxFile);
+			Assert.That(plgxFile, Is.Not.Null);
 
 			Assert.DoesNotThrow(() => plgxFile.UnpackTo(directoryPath));
 
 			var unpackedFiles = plgxFile.GetUnpackedFiles();
 
-			CollectionAssert.AreEqual(FileNamesList, unpackedFiles.Select(x => x.Name));
+			Assert.That(FileNamesList, Is.EqualTo(unpackedFiles.Select(x => x.Name)));
 
 			foreach (var fileEntry in unpackedFiles)
 			{
 				var fileEntryPath = Path.Combine(directoryPath, fileEntry.Name);
 				fileEntryPath = Path.GetFullPath(fileEntryPath);
 
-				Assert.IsTrue(File.Exists(fileEntryPath));
-				Assert.AreEqual(File.ReadAllBytes(fileEntryPath), fileEntry.Content);
+				Assert.That(File.Exists(fileEntryPath), Is.True);
+				Assert.That(File.ReadAllBytes(fileEntryPath), Is.EqualTo(fileEntry.Content));
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace PlgxUnpackerNet.Tests
 				Directory.Delete(directoryPath, true);
 			}
 
-			Assert.IsFalse(Directory.Exists(directoryPath));
+			Assert.That(Directory.Exists(directoryPath), Is.False);
 		}
 	}
 }
