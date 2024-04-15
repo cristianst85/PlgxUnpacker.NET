@@ -20,7 +20,7 @@
   </metadata>
   <files>
     <file src="LICENSE" target="LICENSE" />
-    <file src="README.md" target="" />
+    <file src="README.md" target="README.md" />
     <file src="PlgxUnpackerNet\bin\Release\PlgxUnpackerNet.dll" target="lib\net45\PlgxUnpackerNet.dll" />
     <file src="PlgxUnpackerNet\bin\Release\PlgxUnpackerNet.xml" target="lib\net45\PlgxUnpackerNet.xml" />
   </files>
