@@ -34,7 +34,7 @@ namespace PlgxUnpackerNet.Tests
 
 			var unpackedFiles = plgxFile.GetUnpackedFiles();
 
-			Assert.That(FileNamesList, Is.EqualTo(unpackedFiles.Select(x => x.Name)));
+			Assert.That(unpackedFiles.Select(x => x.Name), Is.EqualTo(FileNamesList));
 
 			foreach (var fileEntry in unpackedFiles)
 			{
@@ -42,7 +42,7 @@ namespace PlgxUnpackerNet.Tests
 				fileEntryPath = Path.GetFullPath(fileEntryPath);
 
 				Assert.That(File.Exists(fileEntryPath), Is.True);
-				Assert.That(File.ReadAllBytes(fileEntryPath), Is.EqualTo(fileEntry.Content));
+				Assert.That(fileEntry.Content, Is.EqualTo(File.ReadAllBytes(fileEntryPath)));
 			}
 		}
 

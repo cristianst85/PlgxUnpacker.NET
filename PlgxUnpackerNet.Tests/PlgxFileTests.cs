@@ -38,13 +38,13 @@ namespace PlgxUnpackerNet.Tests
 
             Assert.DoesNotThrow(() => plgxFile = PlgxFile.LoadFromFile(PlgxFilePath));
             Assert.That(plgxFile, Is.Not.Null);
-            Assert.That(Path.GetFullPath(PlgxFilePath), Is.EqualTo(plgxFile.Path));
+            Assert.That(plgxFile.Path, Is.EqualTo(Path.GetFullPath(PlgxFilePath)));
 
             VerifyPlgxFileInfo(plgxFile.Info);
 
             var unpackedFiles = plgxFile.GetUnpackedFiles();
 
-            Assert.That(FileNamesList, Is.EqualTo(unpackedFiles.Select(x => x.Name)));
+            Assert.That(unpackedFiles.Select(x => x.Name), Is.EqualTo(FileNamesList));
 
             foreach (var fileEntry in unpackedFiles)
             {
@@ -52,7 +52,7 @@ namespace PlgxUnpackerNet.Tests
                 fileEntryPath = Path.GetFullPath(fileEntryPath);
 
                 Assert.That(File.Exists(fileEntryPath), Is.True);
-                Assert.That(File.ReadAllBytes(fileEntryPath), Is.EqualTo(fileEntry.Content));
+                Assert.That(fileEntry.Content, Is.EqualTo(File.ReadAllBytes(fileEntryPath)));
             }
         }
 
@@ -63,8 +63,7 @@ namespace PlgxUnpackerNet.Tests
             Assert.That(plgxFileInfo.PluginCreationDateTime, Is.EqualTo(new FileInfo(PlgxFilePath).CreationTime).Within(1).Seconds);
             Assert.That(plgxFileInfo.PreBuildCommand, Is.Null);
             Assert.That(plgxFileInfo.PostBuildCommand, Is.Null);
-
-            Assert.That(FileNamesList, Is.EqualTo(plgxFileInfo.FileNames));
+            Assert.That(plgxFileInfo.FileNames, Is.EqualTo(FileNamesList));
         }
 
         [TestCase]
@@ -81,13 +80,13 @@ namespace PlgxUnpackerNet.Tests
 
             Assert.DoesNotThrow(() => plgxFile = PlgxFile.LoadFromFile(PlgxFileWithCommandsPath));
             Assert.That(plgxFile, Is.Not.Null);
-            Assert.That(Path.GetFullPath(PlgxFileWithCommandsPath), Is.EqualTo(plgxFile.Path));
+            Assert.That(plgxFile.Path, Is.EqualTo(Path.GetFullPath(PlgxFileWithCommandsPath)));
 
             VerifyPlgxFileInfo_WithCommands(plgxFile.Info);
 
             var unpackedFiles = plgxFile.GetUnpackedFiles();
 
-            Assert.That(FileNamesList, Is.EqualTo(unpackedFiles.Select(x => x.Name)));
+            Assert.That(unpackedFiles.Select(x => x.Name), Is.EqualTo(FileNamesList));
 
             foreach (var fileEntry in unpackedFiles)
             {
@@ -95,7 +94,7 @@ namespace PlgxUnpackerNet.Tests
                 fileEntryPath = Path.GetFullPath(fileEntryPath);
 
                 Assert.That(File.Exists(fileEntryPath), Is.True);
-                Assert.That(File.ReadAllBytes(fileEntryPath), Is.EqualTo(fileEntry.Content));
+                Assert.That(fileEntry.Content, Is.EqualTo(File.ReadAllBytes(fileEntryPath)));
             }
         }
 
@@ -106,8 +105,7 @@ namespace PlgxUnpackerNet.Tests
             Assert.That(plgxFileInfo.PluginCreationDateTime, Is.EqualTo(new FileInfo(PlgxFileWithCommandsPath).CreationTime).Within(1).Seconds);
             Assert.That(plgxFileInfo.PreBuildCommand, Is.EqualTo(@"""{PLGX_TEMP_DIR}Resources\Scripts\PreBuildScript.bat"""));
             Assert.That(plgxFileInfo.PostBuildCommand, Is.EqualTo(@"""{PLGX_TEMP_DIR}Resources\Scripts\PostBuildScript.bat"""));
-
-            Assert.That(FileNamesList, Is.EqualTo(plgxFileInfo.FileNames));
+            Assert.That(plgxFileInfo.FileNames, Is.EqualTo(FileNamesList));
         }
     }
 }
